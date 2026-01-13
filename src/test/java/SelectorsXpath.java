@@ -41,7 +41,7 @@ public class SelectorsXpath {
         btnSignOut.click();
         pause(3);
 
-//        check after class
+//        check after class__
 //        List<WebElement> buttons = driver.findElement(By.xpath("//button"));
 //        System.out.println(buttons);
 //        System.out.println(buttons.get(1).getText());
