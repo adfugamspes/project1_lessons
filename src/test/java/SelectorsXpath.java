@@ -78,7 +78,6 @@ public class SelectorsXpath {
         pause(3);
 
         List<WebElement> buttons = driver.findElements(By.xpath("//button"));
-        System.out.println(buttons);
         System.out.println(buttons.get(0).getText());
         System.out.println(buttons.get(1).getText());
     }
