@@ -43,42 +43,45 @@ public class SelectorsXpath {
     }
 
 
+    @Test
+    public void phoneBookTest() {
+        driver.manage().window().maximize();
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.get("https://telranedu.web.app/home");
+//      WebElement btnAbout = driver.findElement(By.cssSelector("a[href='//about']"));
+        WebElement btnAbout = driver.findElement(By.xpath("//a[@href='/about']"));
+//        *a[@href='about']
+//        *[text()='ABOUT']
+        btnAbout.click();
+        pause(3);
 
-//    @Test
-//    public void phoneBookTest() {
-//        driver.manage().window().maximize();
-//        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
-//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-//        driver.get("https://telranedu.web.app/home");
-////        WebElement btnAbout = driver.findElement(By.cssSelector("a[href='//about']"));
-//        WebElement btnAbout = driver.findElement(By.xpath("//a[@href='/about']"));
-//        // //*a[@href='about']
-//        // //*[text()='ABOUT']
-//
-//        btnAbout.click();
-//        SelectorsCss.pause(3);
-//        WebElement btnLogin = driver.findElement(By.xpath("//*[text()='LOGIN']"));
-//        btnLogin.click();
-//        pause(3);
-//        WebElement inputEmail = driver.findElement(By.xpath("//input[@placeholder='Email']"));
-//        int i = new Random().nextInt(1000);
-//        inputEmail.sendKeys("test23" + i + "@gmail.com");
-//        pause(3);
-//        WebElement inputName = driver.findElement(By.xpath("//*[@name='password']"));
-//        inputName.sendKeys("Password!123");
-//        pause(3);
-//        WebElement btnRegistration = driver.findElement(By.xpath("//*[@name='registration']"));
-//        btnRegistration.click();
-//        pause(3);
-//        WebElement btnSignOut = driver.findElement(By.xpath("//button[text()='Sign Out']"));
-//        btnSignOut.click();
-//        pause(3);
-//
-////        check after class__
-////        List<WebElement> buttons = driver.findElement(By.xpath("//button"));
-////        System.out.println(buttons);
-////        System.out.println(buttons.get(1).getText());
-//    }
+        WebElement btnLogin = driver.findElement(By.xpath("//*[text()='LOGIN']"));
+        btnLogin.click();
+        pause(3);
+
+        WebElement inputEmail = driver.findElement(By.xpath("//input[@placeholder='Email']"));
+        int i = new Random().nextInt(1000);
+        inputEmail.sendKeys("test23" + i + "@gmail.com");
+        pause(3);
+
+        WebElement inputName = driver.findElement(By.xpath("//*[@name='password']"));
+        inputName.sendKeys("Password!123");
+        pause(3);
+
+        WebElement btnRegistration = driver.findElement(By.xpath("//*[@name='registration']"));
+        btnRegistration.click();
+        pause(3);
+
+        WebElement btnSignOut = driver.findElement(By.xpath("//button[text()='Sign Out']"));
+        btnSignOut.click();
+        pause(3);
+
+        List<WebElement> buttons = driver.findElements(By.xpath("//button"));
+        System.out.println(buttons);
+        System.out.println(buttons.get(0).getText());
+        System.out.println(buttons.get(1).getText());
+    }
 
         static void pause (int time){
             try {
